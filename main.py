@@ -8,13 +8,18 @@ def calc_ihh(total, array_data):
 
 def main():
     array_data = []
+    total = 0
+    response = input("Existe total mundial (1: sim, 0: nao)")
+    if response == '1':
+        total = int(input("Diz-me o total: "))
     while True:
         data = int(input("Escreve o dado numero {}: ".format(len(array_data))))
         if data == 0:
-            total = sum(array_data)
+            if response == '0':
+                total = sum(array_data)
+
             calc_ihh(total, array_data)
             break
-
         array_data.append(data)
 
 
